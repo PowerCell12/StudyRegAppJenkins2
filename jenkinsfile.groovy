@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+
+    stages{
+        stage("Checking out the code"){
+            steps{
+                checkout scm
+            }
+        }
+
+        stage("Setting up Node.js"){
+            steps{
+                tool name: 'NodeJS', type: 'nodejs'
+            }
+        }
+
+
+        stage("installing dependencies"){
+            steps{
+                npm install
+            }
+        }
+
+
+        stage("starting the app"){
+            steps{
+                npm start & 
+            }
+        }
+
+        stage("running tests"){
+            steps{
+                npm test
+            }
+        }
+    }
+}
