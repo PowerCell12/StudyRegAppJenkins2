@@ -30,7 +30,7 @@ pipeline {
 
         stage("running tests"){
             steps{
-                npm test
+                sh 'npm test'
             }
         }
     }
