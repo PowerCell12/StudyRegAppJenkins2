@@ -24,7 +24,7 @@ pipeline {
 
         stage("starting the app"){
             steps{
-                npm start & 
+                sh  'npm start &' 
             }
         }
 
